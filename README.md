@@ -9,7 +9,7 @@ import "JSONDownloader.h"
 
 	JSONDownloader *downloader = [[JSONDownloader alloc] init];
 	
-	[downloader getJSONDataFromURL:[NSURL URLWithString:@"http://wip.niallquinn.me/sample.json"] callback:^(NSDictionary *response){
+	[downloader getJSONDataFromURL:[NSURL URLWithString:@"someURLString"] callback:^(NSDictionary *response){
         //Deal with response callback here
     }];
 
