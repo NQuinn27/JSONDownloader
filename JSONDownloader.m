@@ -27,7 +27,6 @@ THE SOFTWARE.
 @implementation JSONDownloader {
     NSMutableData *_responseData;
     void(^callback)(NSDictionary *response);
-    NSURLConnection *conn;
 }
 
 - (id) init {
@@ -42,7 +41,7 @@ THE SOFTWARE.
     callback = completion;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [NSURLConnection connectionWithRequest:request delegate:self];
 
 }
 
@@ -57,7 +56,6 @@ THE SOFTWARE.
     
     callback(parsedObject);
     _responseData = nil;
-    conn = nil;
     
 }
 
